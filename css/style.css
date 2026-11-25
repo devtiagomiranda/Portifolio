@@ -1,0 +1,385 @@
+:root {
+    --bg: #1C1B1A;
+    --alt: #222120;
+    --card: #2A2826;
+    --borda: #5A4333;
+    --txt: #CDB391;
+    --mudo: #B3A28A;
+    --tit: #F0E6D6;
+    --hl: #D08F5E;
+    --btn: #D08F5E;
+    --btn-txt: #1C1B1A;
+    --nav: rgba(28, 27, 26, .92);
+    --rod: #121110;
+    --rod-txt: #CDB391;
+    --cod: #121110;
+    --cod-txt: #F0E6D6;
+    --cod-hl: #D08F5E;
+    --circ: #5C3B27;
+    --cta: #2A2826;
+    --cta-txt: #F0E6D6;
+    --cta-btn: #D08F5E;
+    --cta-btn-txt: #1C1B1A
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    background: var(--bg);
+    color: var(--txt);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    line-height: 1.7;
+    margin: 0
+}
+
+h1,
+h2,
+h3,
+.marca {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--tit);
+    font-weight: 600
+}
+
+a {
+    color: var(--hl)
+}
+
+:focus-visible {
+    outline: 2px solid var(--hl);
+    outline-offset: 3px
+}
+
+.menu-fixo {
+    background: var(--nav);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--borda)
+}
+
+.navbar-brand {
+    color: var(--tit) !important;
+    font-family: 'Fraunces', Georgia, serif
+}
+
+.navbar .nav-link {
+    color: var(--txt) !important;
+    position: relative;
+    padding: .5rem .9rem
+}
+
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: .9rem;
+    right: .9rem;
+    bottom: 2px;
+    height: 2px;
+    background: var(--hl);
+    transform: scaleX(0);
+    transition: transform .2s
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    transform: scaleX(1)
+}
+
+.navbar-toggler {
+    border-color: var(--borda)
+}
+
+.sec {
+    padding: 64px 0
+}
+
+.sec-alt {
+    background: var(--alt)
+}
+
+.hero {
+    padding: 56px 0 72px
+}
+
+.tag {
+    display: inline-block;
+    font-size: .8rem;
+    color: var(--mudo);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 2px 12px;
+    margin-bottom: 14px
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+    margin: 0
+}
+
+.hero h1 span {
+    color: var(--hl)
+}
+
+.hero h2 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    margin: .4rem 0 1rem
+}
+
+.btn-p,
+.btn-s {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: .55rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid var(--hl);
+    transition: background .2s, color .2s
+}
+
+.btn-p {
+    background: var(--btn);
+    color: var(--btn-txt);
+    border-color: var(--btn)
+}
+
+.btn-p:hover {
+    filter: brightness(1.08);
+    color: var(--btn-txt)
+}
+
+.btn-s {
+    color: var(--txt)
+}
+
+.btn-s:hover {
+    background: var(--card);
+    color: var(--txt)
+}
+
+.techs i {
+    font-size: 2rem;
+    color: var(--hl);
+    margin-right: .9rem
+}
+
+.foto-wrap {
+    position: relative;
+    width: min(340px, 80%);
+    aspect-ratio: 1;
+    margin: 0 auto 24px
+}
+
+.foto-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translate(16px, 16px);
+    border-radius: 50%;
+    background: var(--circ)
+}
+
+.foto {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 55% 20%;
+    border: 3px solid var(--hl)
+}
+
+.codigo {
+    position: absolute;
+    left: -28px;
+    bottom: -6px;
+    background: var(--cod);
+    color: var(--cod-txt);
+    font-family: ui-monospace, Menlo, monospace;
+    font-size: .78rem;
+    line-height: 1.5;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--borda)
+}
+
+.foto-perfil {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: 55% 20%;
+    border-radius: 50%;
+    border: 3px solid var(--hl)
+}
+
+.titulo-pag {
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    margin-bottom: .4rem
+}
+
+.sub {
+    color: var(--mudo);
+    margin-bottom: 32px
+}
+
+.num {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 2rem;
+    color: var(--hl);
+    line-height: 1.1
+}
+
+.cartao {
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%
+}
+
+.cartao i.big {
+    font-size: 2.2rem;
+    color: var(--hl)
+}
+
+.cartao h3 {
+    font-size: 1.1rem;
+    margin: .6rem 0 .3rem
+}
+
+.cartao p {
+    margin: 0;
+    font-size: .92rem
+}
+
+.proj img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    border: 1px solid var(--borda)
+}
+
+.bd {
+    display: inline-block;
+    font-size: .75rem;
+    padding: 1px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--borda);
+    background: var(--bg);
+    color: var(--txt);
+    margin: 0 4px 6px 0
+}
+
+.apr {
+    font-size: .88rem;
+    color: var(--mudo);
+    margin: 8px 0 14px !important
+}
+
+.jornada {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding-top: 22px
+}
+
+.jornada::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5px;
+    height: 1px;
+    background: var(--hl)
+}
+
+.jornada div {
+    position: relative
+}
+
+.jornada small {
+    color: var(--hl);
+    display: block
+}
+
+.cta {
+    background: var(--cta);
+    color: var(--cta-txt);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap
+}
+
+.cta h2 {
+    color: var(--cta-txt);
+    font-size: 1.5rem;
+    margin: 0
+}
+
+.cta .btn-p {
+    background: var(--cta-btn);
+    color: var(--cta-btn-txt);
+    border-color: var(--cta-btn)
+}
+
+.cta .btn-s {
+    color: var(--cta-txt);
+    border-color: var(--cta-txt)
+}
+
+.cta .btn-s:hover {
+    background: transparent;
+    filter: brightness(1.15);
+    color: var(--cta-txt)
+}
+
+footer {
+    background: var(--rod);
+    color: var(--rod-txt);
+    padding: 22px 0;
+    font-size: .9rem
+}
+
+footer a {
+    color: var(--rod-txt);
+    font-size: 1.2rem;
+    margin-left: 14px
+}
+
+@media(max-width:767px) {
+    .jornada {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .jornada::before {
+        display: none
+    }
+    .codigo {
+        left: 0
+    }
+
+    .sec {
+        padding: 44px 0
+    }
+}
+.jornada-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px
+}
+
+@media(max-width:767px) {
+    .jornada-3 {
+        grid-template-columns: 1fr
+    }
+}
